@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML lang="en">
 	<HEAD>
-		<link rel="stylesheet" href="../assets/css/COMP2001.css">
+		<link rel="stylesheet" href="../assets/css/index.css">
 		<link rel="shortcut icon" type="image/png" href="../assets/images/ico1.png">
 		<title>Plymouth Assault Data</title>
 		<IMG height=410 src="../assets/images/banner3.jpg" width="105%" 
