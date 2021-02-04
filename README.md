@@ -2,11 +2,10 @@
 Information Management and Retrieval
 
 *Contents*
-* Auth - Authentication RESTful API
+* Auth - Authentication RESTful API (including SQL)
 * public - Linked Data Application
 * assets - css, js and images
 * Sexual Offences - folder for entity data (backs up public)
-* DB - database for Authentication RESTful API
 
 *Overview*
 The aim of the API is to provide full CRUD functionality to an enduser's account. 
