@@ -127,7 +127,7 @@ namespace WebAPI.Models
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-        public bool Validate(Enduser enduser)
+        public bool Validate(Enduser enduser, Userpassword userpassword)
         {
             try
             {
