@@ -132,7 +132,7 @@ namespace WebAPI.Controllers
         }
 
         // DELETE: Endusers/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpDelete, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
@@ -148,9 +148,9 @@ namespace WebAPI.Controllers
         }
 
         // PUT: Endusers/Edit/5
-        [HttpPost]
+        [HttpPut]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Put(int id, [Bind("UserId,UserFName,UserLName,UserEmail")] Enduser enduser)
+        public async Task<IActionResult> Put(int id, [Bind("UserId,UserFName,UserLName,UserEmail")] Enduser enduser, [Bind("PasswordNew")] Userpassword userpassword)
         {
             if (id != enduser.UserId)
             {
@@ -161,7 +161,7 @@ namespace WebAPI.Controllers
             {
                 try
                 {
-                    _context.Update(enduser);
+                    _context.Update(enduser, userpassword);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -181,10 +181,11 @@ namespace WebAPI.Controllers
         }
 
         // getValidation(User) : bool
-        private bool GetValidation(int id, [Bind("UserId,UserFName,UserLName,UserEmail")] Enduser enduser)
+        [HttpGet]
+        private bool GetValidation(int id, [Bind("UserEmail")] Enduser enduser, [Bind("PasswordNew")] Userpassword userpassword)
         {
             DataAccess d = new DataAccess();
-            bool v  = d.Validate(enduser);
+            bool v  = d.Validate(enduser, userpassword);
             return v;
         }
 
